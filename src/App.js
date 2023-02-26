@@ -1,7 +1,13 @@
-import Home from './components/Home';
-import './App.css';
-import Preloader from './components/Preloader';
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Project from './components/projects';
+import Home from './components/Home';
+import Preloader from './components/Preloader';
+import NavigationBar from './components/NavigationBar';
+import './App.css';
+
+
+
 
 
 function App() {
@@ -16,8 +22,13 @@ function App() {
     <>
     <div className="App">
     {loading === false ? (
-      
-            <Home />
+              <Router>
+                <NavigationBar />
+                <Routes>
+                  <Route exact path="/" element={<Home />} />
+                  <Route exact path="/projects" element={<Project />} />
+                </Routes>
+              </Router>     
       
     ) : (
       <Preloader />

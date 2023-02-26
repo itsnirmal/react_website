@@ -1,10 +1,12 @@
 import React from 'react';
 import Typewriter from "typewriter-effect";
 
+
 function Home() {
   return (
-    <div className="App">
+    <div>
       <header className="App-header">
+        
         <a href='https://github.com/itsnirmal' target= "_blank" rel="noreferrer noopener">Visit my Github</a>  
         <Typewriter
                 options= {{ 
