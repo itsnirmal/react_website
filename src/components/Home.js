@@ -14,7 +14,7 @@ function Home() {
                               cursor: '_',
                         }}
                 onInit={(typewriter)=> {
-                      typewriter.typeString("Hello! I am Nirmal. This is my website (underdevelopment).").pauseFor(8500).start();
+                      typewriter.typeString("Welcome to my portfolio website!").pauseFor(8500).start();
                   
                       
                 }}

@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import './navbar.css';
+import { Spin as Hamburger} from 'hamburger-react';
 
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,9 +31,7 @@ const NavigationBar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-toggle" onClick={toggleMenu}>
-          <span className={`navbar-toggle-icon ${isOpen ? 'active' : ''}`}></span>
-        </div>
+        <Hamburger onToggle={toggleMenu}  rounded />
       </div>
     </nav>
   );
