@@ -34,7 +34,7 @@ const NavigationBar = () => {
                 Projects
               </Link>
             </li>
-          </ul>
+          </ul>         
       </div>
       <div className='hamburger-icon'>
         <Hamburger onToggle={toggleMenu} rounded />
