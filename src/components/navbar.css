@@ -88,10 +88,7 @@
         background-color: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(5px);
 
-    }
 
-    .mobile-menu.active {
-        display: flex;
     }
 
     .mobile-menu ul {
@@ -122,7 +119,12 @@
 
     .hamburger-icon {
             display: flex;
+            margin-right: 10px;
+            z-index: 999;
     }
+
+    .mobile-menu.active {
+            display: flex;
+        }
         
-    
 }

@@ -8,11 +8,17 @@ const NavigationBar = () => {
 
   
     const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
+    const [hamburgerActive, setHamburgerActive] = useState(false);
     const toggleMenu = () => {
-    setMobileMenuVisible(!mobileMenuVisible);
-  
-}
-
+          setMobileMenuVisible(!mobileMenuVisible);
+          if (!mobileMenuVisible) {
+            setHamburgerActive(true);
+          } else {
+            setHamburgerActive(false);
+          }
+      }
+    
+    
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -22,23 +28,23 @@ const NavigationBar = () => {
          <div className="navbar-menu" >
           
         </div>
-        <div className={mobileMenuVisible ? "mobile-menu active" : "mobile-menu"}>
+        <div className={mobileMenuVisible ? "mobile-menu active" : "mobile-menu"} onClick= {toggleMenu}>
         <ul className='navbar-list'>
             <li className='navbar-item'>
-              <Link to='/' className='navbar-link' onClick= {toggleMenu}>
+              <Link to='/' className='navbar-link'>
                 Home
               </Link>
             </li>
             <li className='navbar-item'>
-              <Link to='/projects' className='navbar-link' onClick= {toggleMenu}>
+              <Link to='/projects' className='navbar-link'>
                 Projects
               </Link>
             </li>
-          </ul>         
+          </ul>        
       </div>
-      <div className='hamburger-icon'>
-        <Hamburger onToggle={toggleMenu} rounded />
-      </div>
+        <div className='hamburger-icon'>
+            <Hamburger onToggle={toggleMenu} toggled={hamburgerActive}/>        
+        </div> 
       </div>
     </nav>
   );
